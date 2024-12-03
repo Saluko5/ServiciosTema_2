@@ -37,9 +37,10 @@ namespace Ejercicio2
                 for (int i = 0; i < extensiones.Length; i++)
                 {
                     FileInfo[] archivos = dr.GetFiles("*" + extensiones[i]);
-                    int indice = 0;
+                    //indice = 0 esto seria lo normal y lo que estaria bien pero no se porque esta mal
                     for (int j = 0; j < archivos.Length; j++)
                     {
+                        int indice = 0;
                         Thread hilo = new Thread(() => buscarCoincidencia(archivos[indice]));
                         hilo.Start();
                         if (indice < archivos.Length)
